@@ -1,0 +1,330 @@
+greet s=demo
+{"event": "greet", "session": {"rounds": 0}}
+search s=demo
+{"event": "search", "session": "demo", "plan": {"q": "buscar perfiles para Durlock", "terms": ["perfil", "Durlock"], "family": "perfil", "confidence": 0.8, "must": [], "not": [], "units": {}, "decision": "search", "questions": []}, "gate": {"conf>=0.65": true, "has_catalog_tokens": true, "has_numbers": false}, "search_input": {"q": "buscar perfiles para Durlock perfil Durlock", "must": [], "not": [], "limit": 4}, "search_stats": {"returned": 4, "min_return": 2, "max_return": 4}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 1, "total_questions": 1, "family": "perfil", "terms": ["perfil", "Durlock"]}, "plan": {"q": "¿Qué información necesitas?", "terms": ["perfil", "Durlock"], "family": "perfil", "confidence": 0.7, "must": [], "not": [], "units": {}, "decision": "ask", "questions": ["¿Podrías especificar qué información necesitas sobre el perfil Durlock?"]}, "gate": {"reason": "decision!=search"}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 2, "total_questions": 2, "family": "perfil", "terms": ["perfil", "Durlock"]}, "plan": {"q": "¿Qué tipo de perfil Durlock necesitas?", "terms": ["perfil", "Durlock"], "family": "perfil", "confidence": 0.9, "must": [], "not": [], "units": {}, "decision": "ask", "questions": ["¿Qué tipo de perfil Durlock necesitas?"]}, "gate": {"reason": "decision!=search"}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 3, "total_questions": 3, "family": "perfil", "terms": ["perfil", "Durlock"]}, "plan": {"q": "No sé qué perfil Durlock elegir", "terms": ["perfil", "Durlock"], "family": "perfil", "confidence": 0.8, "must": [], "not": [], "units": {}, "decision": "ask", "questions": ["¿Qué dimensiones o tipo de perfil necesitas?"]}, "gate": {"reason": "decision!=search"}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 4, "total_questions": 4, "family": "perfil", "terms": ["perfil", "Durlock"]}, "plan": {"q": "¿Qué tipo de perfil Durlock necesitas?", "terms": ["perfil", "Durlock"], "family": "perfil", "confidence": 0.9, "must": [], "not": [], "units": {}, "decision": "ask", "questions": ["¿Podrías especificar el tipo de perfil Durlock que buscas?"]}, "gate": {"reason": "decision!=search"}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 5, "total_questions": 5, "family": "perfil", "terms": ["perfil", "Durlock"]}, "plan": {"q": "¿Qué tipo de perfil Durlock necesitas?", "terms": ["perfil", "Durlock"], "family": "perfil", "confidence": 0.7, "must": [], "not": [], "units": {}, "decision": "ask", "questions": ["¿Podrías especificar el tipo de perfil Durlock que buscas?"]}, "gate": {"reason": "decision!=search"}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 6, "total_questions": 6, "family": "perfil", "terms": ["perfil", "Durlock"]}, "plan": {"q": "Necesito perfil Durlock específico", "terms": ["perfil", "Durlock"], "family": "perfil", "confidence": 0.9, "must": [], "not": [], "units": {}, "decision": "ask", "questions": ["¿Podrías especificar el tipo o medida exacta del perfil Durlock que necesitás?"]}, "gate": {"reason": "decision!=search"}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 6}, "reason": "min_questions_reached"}
+greet s=demo
+{"event": "greet", "session": {"rounds": 0}}
+search s=demo
+{"event": "search", "session": "demo", "plan": {"q": "Buscar placas de yeso", "terms": ["placas de yeso"], "family": "placas de yeso", "confidence": 0.9, "must": ["durlock"], "not": [], "units": {}, "decision": "search", "questions": []}, "gate": {"conf>=0.65": true, "has_catalog_tokens": true, "has_numbers": false}, "search_input": {"q": "Buscar placas de yeso placas de yeso", "must": ["durlock"], "not": [], "limit": 4}, "search_stats": {"returned": 2, "min_return": 2, "max_return": 4}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 1, "total_questions": 1, "family": "placas de yeso", "terms": ["placas de yeso"]}, "plan": {"q": "Buscar placas de yeso específicas", "terms": ["placas de yeso"], "family": "placas de yeso", "confidence": 0.9, "must": [], "not": [], "units": {}, "decision": "ask", "questions": ["¿Qué tipo de placa de yeso necesitas?"]}, "gate": {"reason": "decision!=search"}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 2, "total_questions": 2, "family": "placas de yeso", "terms": ["placas de yeso"]}, "plan": {"q": "¿Qué tipo de placa de yeso necesitas?", "terms": ["placas de yeso"], "family": "placas de yeso", "confidence": 0.9, "must": ["durlock"], "not": [], "units": {}, "decision": "ask", "questions": []}, "gate": {"reason": "decision!=search"}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 3, "total_questions": 3, "family": "placas de yeso", "terms": ["placas de yeso"]}, "plan": {"q": "¿Qué tipo de placa de yeso necesitas?", "terms": ["placas de yeso"], "family": "placas de yeso", "confidence": 0.9, "must": [], "not": [], "units": {}, "decision": "ask", "questions": ["¿Qué tipo de placa de yeso necesitas?"]}, "gate": {"reason": "decision!=search"}}
+greet s=demo
+{"event": "greet", "session": {"rounds": 0}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 1, "total_questions": 1, "family": "perfil", "terms": ["durlock", "perfil"]}, "plan": {"q": "Buscar perfiles para durlock", "terms": ["perfil", "durlock"], "family": "perfil", "confidence": 0.8, "variants_likely": true}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 2, "total_questions": 2, "family": "perfil", "terms": ["durlock", "perfil"]}, "plan": {"q": "¿Qué tipos de perfiles hay?", "terms": ["durlock", "perfil"], "family": "perfil", "confidence": 0.8, "variants_likely": true}}
+search s=demo
+{"event": "search", "session": "demo", "plan": {"q": "perfil omega para durlock", "terms": ["durlock", "perfil", "omega"], "family": "perfil", "confidence": 0.9}, "search_input": {"q": "perfil omega para durlock durlock perfil omega", "must": ["omega"], "not": [], "limit": 4}, "search_stats": {"returned": 2, "min_return": 2, "max_return": 4}}
+greet s=demo
+{"event": "greet", "session": {"rounds": 0}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 1, "total_questions": 1, "family": "perfiles", "terms": ["perfiles", "Durlock"]}, "plan": {"q": "Necesito perfiles para Durlock", "terms": ["perfiles", "Durlock"], "family": "perfiles", "confidence": 0.7, "variants_likely": true}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 2, "total_questions": 2, "family": "perfiles", "terms": ["perfiles", "Durlock"]}, "plan": {"q": "¿Qué tipos de perfiles hay?", "terms": ["perfiles", "Durlock"], "family": "perfiles", "confidence": 0.8, "variants_likely": true}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 3, "total_questions": 3, "family": "perfiles", "terms": ["perfiles", "Durlock"]}, "plan": {"q": "¿Para qué sirve cada perfil?", "terms": ["perfiles", "Durlock"], "family": "perfiles", "confidence": 0.8, "variants_likely": true}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 4, "total_questions": 4, "family": "perfiles", "terms": ["perfiles", "Durlock", "pared"]}, "plan": {"q": "perfiles para pared de Durlock", "terms": ["perfiles", "Durlock", "pared"], "family": "perfiles", "confidence": 0.9, "variants_likely": true}}
+search s=demo
+{"event": "search", "session": "demo", "plan": {"q": "perfil omega para pared Durlock", "terms": ["perfil", "omega", "Durlock", "pared"], "family": "perfiles", "confidence": 0.9}, "search_input": {"q": "perfil omega para pared Durlock perfil omega Durlock pared", "must": ["omega"], "not": [], "limit": 4}, "search_stats": {"returned": 2, "min_return": 2, "max_return": 4}}
+greet s=demo
+{"event": "greet", "session": {"rounds": 0}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 1, "total_questions": 1, "family": "herramientas eléctricas", "terms": ["taladro"]}, "plan": {"q": "necesito un taladro", "terms": ["taladro"], "family": "herramientas eléctricas", "confidence": 0.9, "variants_likely": true}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 2, "total_questions": 2, "family": "herramientas eléctricas", "terms": ["taladro"]}, "plan": {"q": "¿Qué tipo de taladro necesitas?", "terms": ["taladro"], "family": "herramientas eléctricas", "confidence": 0.9, "variants_likely": true}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 3, "total_questions": 3, "family": "herramientas eléctricas", "terms": ["taladro", "atornillador"]}, "plan": {"q": "atornillador eléctrico portátil", "terms": ["atornillador"], "family": "herramientas eléctricas", "confidence": 0.9, "variants_likely": true}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 4, "total_questions": 4, "family": "herramientas eléctricas", "terms": ["taladro", "atornillador"]}, "plan": {"q": "no tengo idea sobre taladros", "terms": ["taladro", "atornillador"], "family": "herramientas eléctricas", "confidence": 0.3, "variants_likely": true}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 5, "total_questions": 5, "family": "herramientas eléctricas", "terms": ["taladro", "atornillador", "inalámbrico"]}, "plan": {"q": "taladro inalámbrico requerido", "terms": ["taladro", "atornillador", "inalámbrico"], "family": "herramientas eléctricas", "confidence": 0.9, "variants_likely": true}}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "weak_catalog_match", "proposed": "¿Qué marca o modelo preferís?"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 7, "total_questions": 7, "family": "herramientas eléctricas", "terms": ["taladro", "atornillador", "inalámbrico"]}, "plan": {"q": "busco taladro inalámbrico", "terms": ["taladro", "atornillador", "inalámbrico"], "family": "herramientas eléctricas", "confidence": 0.9, "variants_likely": true}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 7}, "reason": "min_questions_reached"}
+greet s=demo
+{"event": "greet", "session": {"rounds": 0}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 1, "total_questions": 1, "family": "caños termofusión", "terms": ["termofusión", "caños"]}, "plan": {"q": "Quiero caños de termofusión", "terms": ["caños", "termofusión"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": true}}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud necesitas para los caños de termofusión?"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 3, "total_questions": 3, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "no sé la verdad", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.5, "variants_likely": false}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 4, "total_questions": 4, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "No estoy seguro qué necesito", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.6, "variants_likely": false}}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué tipo de caño necesitás?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué diámetro exacto necesitas para los caños?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños?"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 16, "total_questions": 16, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños termofusión 20 mm longitud desconocida", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.8, "variants_likely": true}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 16}, "reason": "min_questions_reached"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 17, "total_questions": 17, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "necesito caños de termofusión 20 mm", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": false}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 17}, "reason": "min_questions_reached"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 21, "total_questions": 21, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños termofusión 20 mm longitud específica", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": true}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 21}, "reason": "min_questions_reached"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 22, "total_questions": 22, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños termofusión 20 mm longitud desconocida", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.8, "variants_likely": true}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 22}, "reason": "min_questions_reached"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 29, "total_questions": 29, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños de termofusión 20 mm", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": false}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 29}, "reason": "min_questions_reached"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitás para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitás para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 36, "total_questions": 36, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños termofusión 20 mm longitud desconocida", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.7, "variants_likely": true}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 36}, "reason": "min_questions_reached"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitás para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitás para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 49, "total_questions": 49, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños de termofusión de 20 mm", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": false}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 49}, "reason": "min_questions_reached"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 50, "total_questions": 50, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños de termofusión de 20 mm", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": false}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 50}, "reason": "min_questions_reached"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 51, "total_questions": 51, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños de termofusión de 20 mm", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": true}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 51}, "reason": "min_questions_reached"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 52, "total_questions": 52, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños termofusión 20 mm", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": true}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 52}, "reason": "min_questions_reached"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 53, "total_questions": 53, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños termofusión 20 mm", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": true}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 53}, "reason": "min_questions_reached"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud específica necesitas para los caños de termofusión de 20 mm?"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 57, "total_questions": 57, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños de termofusión 20 mm", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": true}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 57}, "reason": "min_questions_reached"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud específica necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión?"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 60, "total_questions": 60, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños de termofusión de 20 mm", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": true}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 60}, "reason": "min_questions_reached"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 66, "total_questions": 66, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "¿Qué longitud necesitas para los caños?", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": false}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 66}, "reason": "min_questions_reached"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud específica necesitas para los caños de termofusión de 20 mm?"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 75, "total_questions": 75, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "Necesito caños de termofusión 20 mm", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": true}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 75}, "reason": "min_questions_reached"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask s=demo
+{"event": "ask", "session": {"rounds": 78, "total_questions": 78, "family": "caños termofusión", "terms": ["20 mm", "termofusión", "caños"]}, "plan": {"q": "caños termofusión 20 mm", "terms": ["20 mm", "termofusión", "caños"], "family": "caños termofusión", "confidence": 0.9, "variants_likely": true}}
+escalate s=demo
+{"event": "escalate", "session": {"total_questions": 78}, "reason": "min_questions_reached"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud específica necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud específica necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitás para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud exacta necesitas para los caños de termofusión de 20 mm?"}
+greet s=demo
+{"event": "greet", "session": {"rounds": 0}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 1, "total_questions": 1, "family": "construcción", "terms": ["perfil"]}, "plan": {"q": "Buscar perfil de construcción", "terms": ["perfil"], "family": "construcción", "confidence": 0.9, "variants_likely": true}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 2, "total_questions": 2, "family": "construcción", "terms": ["perfil", "construcción"]}, "plan": {"q": "Buscar perfil de construcción específico", "terms": ["perfil", "construcción"], "family": "construcción", "confidence": 0.9, "variants_likely": true}}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Necesitás el perfil galvanizado o de otro material — para asegurar compatibilidad?"}
+greet s=demo
+{"event": "greet", "session": {"rounds": 0}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 1, "total_questions": 1, "family": "perfil", "terms": ["construcción en seco", "perfil"]}, "plan": {"q": "Busco perfiles para construcción en seco", "terms": ["perfil", "construcción en seco"], "family": "perfil", "confidence": 0.9, "variants_likely": true}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 2, "total_questions": 2, "family": "perfil", "terms": ["construcción en seco", "perfil"]}, "plan": {"q": "Buscar perfil para construcción en seco", "terms": ["construcción en seco", "perfil"], "family": "perfil", "confidence": 0.9, "variants_likely": true}}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué material preferís para el perfil —galvanizado u otro?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué longitud total necesitás —en metros o cantidad de perfiles?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Para qué aplicación específica es el perfil —tabiques, cielorrasos u otra?"}
+greet s=demo
+{"event": "greet", "session": {"rounds": 0}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 1, "total_questions": 1, "family": "perfil", "terms": ["durlock", "perfil"]}, "plan": {"q": "Buscar perfiles para durlock", "terms": ["perfil", "durlock"], "family": "perfil", "confidence": 0.8, "variants_likely": true}}
+search s=demo
+{"event": "search", "session": "demo", "plan": {"q": "Buscar perfil omega para durlock", "terms": ["perfil", "omega", "durlock"], "family": "perfil", "confidence": 0.9}, "search_input": {"q": "Buscar perfil omega para durlock perfil omega durlock", "must": ["omega"], "not": [], "limit": 4}, "search_stats": {"returned": 2, "min_return": 2, "max_return": 4}}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué medidas necesitás —largo, ancho o espesor?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "too_many_results", "stats": {"returned": 4}, "proposed": "¿Qué largo necesitás —en metros o milímetros?"}
+greet s=demo
+{"event": "greet", "session": {"rounds": 0}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 1, "total_questions": 1, "family": "herramienta eléctrica", "terms": ["taladro"]}, "plan": {"q": "Comprar taladro nuevo", "terms": ["taladro"], "family": "herramienta eléctrica", "confidence": 0.9, "variants_likely": true}}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "weak_catalog_match", "proposed": "¿Qué potencia preferís para el taladro —considerando que es para uso en casa— y qué tipo de tareas pensás realizar?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "weak_catalog_match", "proposed": "¿Qué potencia específica buscás para el taladro —teniendo en cuenta que es inalámbrico y para uso doméstico— y qué tareas pensás realizar?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "weak_catalog_match", "proposed": "¿Qué marca preferís para el taladro —considerando que es inalámbrico y para uso doméstico?"}
+ask-narrow s=demo
+{"event": "ask-narrow", "session": "demo", "reason": "weak_catalog_match", "proposed": "¿Qué potencia específica buscás para el taladro —considerando que es inalámbrico y para uso doméstico— y qué tareas pensás realizar?"}
+greet s=demo
+{"event": "greet", "session": {"rounds": 0}}
+ask s=demo
+{"event": "ask", "session": {"rounds": 1, "total_questions": 1, "family": "construcción en seco", "terms": ["durlock", "perfil"]}, "plan": {"q": "Buscar perfiles para placas de yeso", "terms": ["perfil", "durlock"], "family": "construcción en seco", "confidence": 0.9, "variants_likely": true}}
+search s=demo
+{"event": "search", "session": "demo", "plan": {"q": "Buscar perfil omega para construcción en seco", "terms": ["perfil", "omega", "durlock"], "family": "construcción en seco", "confidence": 0.9}, "search_input": {"q": "Buscar perfil omega para construcción en seco perfil omega durlock", "must": ["omega"], "not": [], "limit": 4}, "search_stats": {"returned": 2, "min_return": 2, "max_return": 4}}
